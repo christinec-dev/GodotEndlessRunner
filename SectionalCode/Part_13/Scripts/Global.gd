@@ -66,7 +66,7 @@ var advanced_obstacle_resources = [
 	preload("res://Resources/AdvancedObstacles/bee.tscn"),
 	preload("res://Resources/AdvancedObstacles/rotating_log.tscn")
 ]
-var advanced_obstacle_spawn_chance = .5
+var advanced_obstacle_spawn_chance = 0
 
 # Level variables
 var score = 0
