@@ -1,0 +1,164 @@
+[gd_scene load_steps=11 format=3 uid="uid://c5e837atilcil"]
+
+[ext_resource type="Script" path="res://Scripts/Main.gd" id="1_5icag"]
+[ext_resource type="PackedScene" uid="uid://6yvfoo4q2dqe" path="res://Scenes/Player.tscn" id="1_54ub6"]
+[ext_resource type="PackedScene" uid="uid://bkryk1hhel8ta" path="res://Scenes/World.tscn" id="2_jf5oh"]
+[ext_resource type="FontFile" uid="uid://2nj8hcjkivqc" path="res://Assets/Fonts/montreal/Montreal-Bold.ttf" id="3_ymi0i"]
+[ext_resource type="AudioStream" uid="uid://c8menbmpoydct" path="res://Assets/Music/menu_music.mp3" id="5_dmodb"]
+[ext_resource type="AudioStream" uid="uid://kivxf1k4tu8s" path="res://Assets/Music/background_music.mp3" id="6_fqrjh"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_trikq"]
+sky_top_color = Color(0.356863, 0.815686, 0.933333, 1)
+sky_horizon_color = Color(0.737255, 0.603922, 0.729412, 1)
+ground_bottom_color = Color(0.254902, 0.588235, 0.862745, 1)
+ground_horizon_color = Color(0.443137, 0.752941, 0.968627, 1)
+
+[sub_resource type="Sky" id="Sky_5okwd"]
+sky_material = SubResource("ProceduralSkyMaterial_trikq")
+
+[sub_resource type="Environment" id="Environment_1ohtv"]
+background_mode = 2
+sky = SubResource("Sky_5okwd")
+fog_enabled = true
+fog_light_color = Color(0.356863, 0.815686, 0.933333, 1)
+fog_light_energy = 0.3
+fog_sky_affect = 0.3
+volumetric_fog_density = 0.005
+volumetric_fog_sky_affect = 0.4
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_6px5d"]
+dof_blur_far_enabled = true
+dof_blur_far_distance = 30.0
+dof_blur_amount = 1.0
+
+[node name="Main" type="Node3D"]
+process_mode = 3
+script = ExtResource("1_5icag")
+
+[node name="Environment" type="Node3D" parent="."]
+process_mode = 1
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment"]
+transform = Transform3D(0.91938, -0.377203, 0.111619, -0.321394, -0.55667, 0.766044, -0.226819, -0.740159, -0.633022, -1, 600, -970)
+shadow_enabled = true
+shadow_opacity = 0.5
+directional_shadow_mode = 1
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Environment"]
+environment = SubResource("Environment_1ohtv")
+camera_attributes = SubResource("CameraAttributesPractical_6px5d")
+
+[node name="World" parent="." instance=ExtResource("2_jf5oh")]
+process_mode = 1
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+
+[node name="Player" parent="." instance=ExtResource("1_54ub6")]
+process_mode = 1
+
+[node name="Menu" type="CanvasLayer" parent="."]
+process_mode = 3
+layer = 2
+
+[node name="Container" type="ColorRect" parent="Menu"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.290196, 0.415686, 0.560784, 1)
+
+[node name="Label" type="Label" parent="Menu/Container"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -347.0
+offset_top = 35.0
+offset_right = 347.0
+offset_bottom = 158.0
+grow_horizontal = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("3_ymi0i")
+theme_override_font_sizes/font_size = 100
+text = "DOCK & ROLL"
+
+[node name="LevelLabel" type="Label" parent="Menu/Container"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -131.5
+offset_top = -48.0
+offset_right = 131.5
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_ymi0i")
+theme_override_font_sizes/font_size = 30
+text = "last saved level: 1"
+
+[node name="ButtonStart" type="Button" parent="Menu/Container"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = -124.0
+offset_right = 350.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_ymi0i")
+theme_override_font_sizes/font_size = 50
+text = "NEW GAME"
+
+[node name="ButtonLoad" type="Button" parent="Menu/Container"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = -4.0
+offset_right = 350.0
+offset_bottom = 96.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_ymi0i")
+theme_override_font_sizes/font_size = 50
+text = "LOAD GAME"
+
+[node name="ButtonExit" type="Button" parent="Menu/Container"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = 116.0
+offset_right = 350.0
+offset_bottom = 216.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_ymi0i")
+theme_override_font_sizes/font_size = 50
+text = "EXIT"
+
+[node name="Sounds" type="Node3D" parent="."]
+
+[node name="MenuMusic" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("5_dmodb")
+
+[node name="LevelMusic" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("6_fqrjh")
+
+[connection signal="pressed" from="Menu/Container/ButtonStart" to="." method="_on_button_start_pressed"]
+[connection signal="pressed" from="Menu/Container/ButtonLoad" to="." method="_on_button_load_pressed"]
+[connection signal="pressed" from="Menu/Container/ButtonExit" to="." method="_on_button_exit_pressed"]
