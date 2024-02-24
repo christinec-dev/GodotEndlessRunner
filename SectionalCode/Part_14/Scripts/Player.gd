@@ -127,6 +127,7 @@ func game_over():
 		progress_button.text = "CONTINUE"
 		current_state = game_state.CONTINUE
 	Global.update_results.emit()
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		
 # Reset Game State		
 func reset_game_state():
@@ -149,3 +150,4 @@ func _on_progress_button_pressed():
 	elif current_state == game_state.RETRY:
 		reset_game_state()
 		Global.retry_level()
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)

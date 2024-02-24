@@ -13,9 +13,11 @@ extends Node3D
 
 func _ready():
 	menu.visible = true
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	level_music.stop()
 	menu_music.play()
 	update_level_label()
+
 
 # Show last saved lvel
 func update_level_label():
@@ -27,6 +29,7 @@ func _on_button_start_pressed():
 	if button_start.text == "NEW GAME":
 		Global.new_game()
 	menu.visible = false
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	menu_music.stop()
 	level_music.play()
 	get_tree().paused = false
@@ -35,6 +38,7 @@ func _on_button_start_pressed():
 func _on_button_load_pressed():
 	Global.load_game()
 	menu.visible = false
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	player.reset_game_state()
 	menu_music.stop()
 	level_music.play()
@@ -49,6 +53,7 @@ func _input(event):
 	if event.is_action_pressed("ui_menu"):
 		update_level_label() 
 		menu.visible = true
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		menu_music.play()
 		level_music.stop()
 		button_start.text = "RESUME LEVEL"
