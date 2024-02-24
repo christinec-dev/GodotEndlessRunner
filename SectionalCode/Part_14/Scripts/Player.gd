@@ -19,11 +19,15 @@ const gravity = 20
 @onready var game_results_label = $HUD/GameOverScreen/Container/Results/Label
 @onready var progress_button = $HUD/GameOverScreen/Container/Results/ProgressButton
 @onready var world = get_node("/root/Main/World")
+@onready var start_screen = $HUD/StartScreen
 
 # Game State
 enum game_state {CONTINUE, RETRY}
 var current_state
 
+func _ready():
+	start_screen.visible = true
+	
 func _physics_process(delta):
 	handle_movement(delta)
 	
@@ -75,6 +79,7 @@ func check_for_platform_collisions():
 # Start game
 func _input(event):
 	if event.is_action_pressed("ui_accept"):
+		start_screen.visible = false
 		game_starts = true
 		Global.game_started = true
 		game_timer.start()
@@ -94,16 +99,13 @@ func apply_effect(effect_name):
 		"increase_score":
 			Global.score += 1
 			Global.score_updated.emit()
-			print("Score ", Global.score)
 		"boost_jump":
 			Global.jump_boost_count += 1
 			Global.jump_boost_updated.emit()
-			print("Jump Boost ", Global.jump_boost_count)
 		"decrease_time":
 			if Global.level_time >= 10:
 				Global.level_time -= 10
 				Global.level_time_updated.emit()
-				print("Level Time ", Global.level_time)
 
 # Level Progression
 func game_over():
@@ -137,6 +139,7 @@ func reset_game_state():
 	# Unpause game and load level
 	world.reset_world()
 	get_tree().paused = false
+	start_screen.visible = true
 	
 # Progress/ Retry
 func _on_progress_button_pressed():

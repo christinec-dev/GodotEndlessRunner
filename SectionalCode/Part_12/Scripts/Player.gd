@@ -109,14 +109,14 @@ func game_over():
 	game_timer.stop()
 	game_starts = false
 	# Level Fail
-	if Global.lives <= 0 or Global.level_time <= 0:
+	if Global.lives <= 0:
 		game_won = false
 		game_over_screen.visible = true
 		game_results_label.text = "GAME OVER"
 		progress_button.text = "RETRY"
 		current_state = game_state.RETRY
 	# Level Pass
-	else:
+	elif Global.lives >= 1 and Global.level_time <= 0:
 		game_won = true
 		game_over_screen.visible = true
 		game_results_label.text = "LEVEL UP!"
