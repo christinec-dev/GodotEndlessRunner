@@ -1,5 +1,5 @@
 # GodotEndlessRunner
-This is the final and sectional source code for my EndlessRunner 3D series for Godot 4 & GdScript. In our Endless Runner game, called Dock & Roll, our players will spawn and run in a procedurally generated level with obstacles, and collectibles. 😊
+This is the final and sectional source code for my Endless Runner 3D series for Godot 4 & GdScript. In our Endless Runner game, called Dock & Roll, our players will spawn and run in a procedurally generated level with obstacles, and collectibles. 😊
 
 ## Assets
 - Download the assets [here](https://drive.google.com/file/d/1zL1jOZCGRj7rZQLHKNH4A7b7OL2MbZS-/view?usp=sharing)
