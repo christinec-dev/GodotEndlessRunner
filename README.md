@@ -6,6 +6,7 @@ This is the final and sectional source code for my Endless Runner 3D series for 
 
 ## Resources
 - [Excalidraw Board](https://excalidraw.com/#json=FmelkvUrxpi2UEFRicl3x,OKdI1mQ4ByyAVJS6ev4KoQ)
+- [KoFi Booklet](https://ko-fi.com/s/1b4909fcd3)
 - [Game Demo](https://christinec-dev.itch.io/dockroll-demo)
 - [Game Video Preview](https://youtu.be/XjDppUYTOuM)
 
