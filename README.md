@@ -7,7 +7,7 @@ This is the final and sectional source code for my Endless Runner 3D series for 
 ## Resources
 - [Excalidraw Board](https://excalidraw.com/#json=FmelkvUrxpi2UEFRicl3x,OKdI1mQ4ByyAVJS6ev4KoQ)
 - [Game Demo](https://christinec-dev.itch.io/dockroll-demo)
-- [Game Preview](https://youtu.be/XjDppUYTOuM)
+- [Game Video Preview](https://youtu.be/XjDppUYTOuM)
 
 ## Asset Creditations
 - [dalton5000/Godot-Fontpack](https://github.com/dalton5000/Godot-Fontpack)
