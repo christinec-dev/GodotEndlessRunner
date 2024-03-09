@@ -6,9 +6,12 @@ This is the final and sectional source code for my Endless Runner 3D series for 
 
 ## Resources
 - [Excalidraw Board](https://excalidraw.com/#json=FmelkvUrxpi2UEFRicl3x,OKdI1mQ4ByyAVJS6ev4KoQ)
-- [KoFi Booklet](https://ko-fi.com/s/1b4909fcd3)
+- [KoFi PDF](https://ko-fi.com/s/1b4909fcd3)
 - [Game Demo](https://christinec-dev.itch.io/dockroll-demo)
 - [Game Video Preview](https://youtu.be/XjDppUYTOuM)
+
+## Updates
+This series will be turned into a video series, but if you want to skip the wait and access the offline, full version of the tutorial series, you can support me by buying the offline booklet for just $4 on Kofi! 😊
 
 ## Asset Creditations
 - [dalton5000/Godot-Fontpack](https://github.com/dalton5000/Godot-Fontpack)
