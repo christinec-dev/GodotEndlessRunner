@@ -5,7 +5,7 @@ This is the final and sectional source code for my Endless Runner 3D series for 
 - Download the assets [here](https://drive.google.com/file/d/1zL1jOZCGRj7rZQLHKNH4A7b7OL2MbZS-/view?usp=sharing)
 
 ## Resources
-- [Excalidraw Board](https://excalidraw.com/#json=FmelkvUrxpi2UEFRicl3x,OKdI1mQ4ByyAVJS6ev4KoQ)
+- [Excalidraw Board](https://excalidraw.com/#json=gcM2d_eKmaqd5e4LpSCSI,E6gF3j0o0BaWRah6HGKopQ)
 - [KoFi PDF](https://ko-fi.com/s/1b4909fcd3)
 - [Game Demo](https://christinec-dev.itch.io/dockroll-demo)
 - [Game Video Preview](https://youtu.be/XjDppUYTOuM)
